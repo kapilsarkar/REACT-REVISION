@@ -1,14 +1,18 @@
 import Granddaughter from "./Granddaughter";
 import Grandson from "./Granson";
-
-const Child  = ()=>{
-    return(
-        <>
-        <h2>Children</h2>
-        <Grandson/>
-        <Granddaughter/>
-        </>
-    )
-}
+import { FamilyContext } from "../context/FamilyContext";
+import { useContext } from "react";
+const Child = () => {
+  const secret = useContext(FamilyContext);
+  return (
+    <>
+      <div>
+        <h2>{`Children : ${secret.familyName}`}</h2>
+        <Grandson />
+        <Granddaughter />
+      </div>
+    </>
+  );
+};
 
 export default Child;

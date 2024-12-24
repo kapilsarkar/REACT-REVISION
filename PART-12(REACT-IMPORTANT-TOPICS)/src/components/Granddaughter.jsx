@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import { FamilyContext } from "../context/FamilyContext";
 const Granddaughter = () => {
+  const secret = useContext(FamilyContext);
   return (
     <>
-      <h3>GrandDaughter</h3>
+      <div>
+        <h3>{`GrandDaughter ${secret.familyName}`} </h3>
+        <p>{secret.onlyGrandChildrenShouldKnow()}</p>
+      </div>
     </>
   );
 };
